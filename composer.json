@@ -1,0 +1,9 @@
+{
+    "name": "kdyou/mags",
+    "require": {
+        "cakephp/cakephp": "2.10.*"
+    },
+    "config": {
+        "vendor-dir": "Vendor/"
+    }
+}
