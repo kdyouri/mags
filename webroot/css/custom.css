@@ -1,0 +1,35 @@
+.nowrap {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+a.thumbnail:hover,
+a.thumbnail:focus {
+    text-decoration: none;
+}
+.text-yellow {
+    color: #f0ad4e;
+}
+.text-green {
+    color: #5cb85c;
+}
+.text-red {
+    color: #d9534f;
+}
+.bg-yellow {
+    background-color: #f0ad4e;
+}
+.bg-green {
+    background-color: #5cb85c;
+}
+.bg-red {
+    background-color: #d9534f;
+}
+.blink {
+    animation: blinker 1s linear infinite;
+}
+@keyframes blinker {
+    50% {
+        opacity: 0;
+    }
+}

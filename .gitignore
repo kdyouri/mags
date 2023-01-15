@@ -16,6 +16,11 @@ Thumbs.db
 /tags
 /.idea
 
+/Plugin/*
+!/Plugin/
+!/Plugin/.gitkeep
+!/Plugin/Bs3
+
 /Vendor/*
 !/Vendor/
 !/Vendor/.gitkeep

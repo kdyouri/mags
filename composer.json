@@ -1,9 +1,13 @@
 {
-    "name": "kdyou/mags",
-    "require": {
-        "cakephp/cakephp": "2.10.*"
-    },
-    "config": {
-        "vendor-dir": "Vendor/"
-    }
+  "name": "kdyou/mags",
+  "require": {
+     "cakephp/cakephp": "2.10.*",
+     "cakephp/debug_kit": "~2.2",
+     "ext-gd": "*",
+     "ext-json": "*",
+     "ext-dom": "*"
+  },
+  "config": {
+     "vendor-dir": "Vendor/"
+  }
 }
