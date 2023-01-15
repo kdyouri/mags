@@ -40,6 +40,7 @@ $this->Html->script([
 <script type="text/javascript">
     var id = <?= $numero['Numero']['id'] ?>;
     var pageCount = <?= $numero['Numero']['nbr_pages'] ?>;
+    var lastReachedPage = <?= $numero['Numero']['derniere_page_atteinte'] ?>;
 
     // Load all images :
     var loadPageImage = function(page) {
@@ -83,6 +84,7 @@ $this->Html->script([
             gradients: true,
             autoCenter: true,
             //elevation: 50,
+            page: lastReachedPage,
             pages: <?= $numero['Numero']['nbr_pages'] ?>,
             when: {
                 turning: function(event, page, view) {
@@ -92,6 +94,11 @@ $this->Html->script([
 
                     // Show and hide navigation buttons
                     disableControls(page);
+
+                    if (page > lastReachedPage) {
+                        lastReachedPage = page;
+                        $.get(`/numeros/update_read_data/${id}/${lastReachedPage}`);
+                    }
                 },
                 turned: function(event, page, view) {
                     disableControls(page);

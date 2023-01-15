@@ -82,4 +82,26 @@ class NumerosController extends AppController {
         $this->response->body(json_encode(compact('status')));
         return $this->response;
     }
+
+    /**
+     * @param integer $id
+     * @param integer $reached
+     * @throws Exception
+     */
+    public function update_read_data($id = null, $reached = null) {
+        $this->Numero->id = $id;
+        if (!$this->Numero->exists()) throw new NotFoundException();
+
+        if ($pageCount = $this->Numero->field('nbr_pages')) {
+            $read = intval(100 * $reached / $pageCount);
+            if ($read == 100) $reached = 1; // Ré-initialiser
+
+            $this->Numero->save([
+                'id' => $id,
+                'derniere_page_atteinte' => $reached,
+                'lu' => $read // %
+            ]);
+        }
+        $this->autoRender = false;
+    }
 }

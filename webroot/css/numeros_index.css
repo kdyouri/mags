@@ -4,11 +4,11 @@
     height: 16px;
     border-radius: 50%;
 }
-.visited .vignette {
+/*.visited .vignette {
     filter: grayscale(1);
     opacity: .5;
 }
 .visited:hover .vignette {
     filter: grayscale(0);
     opacity: 1;
-}
+}*/

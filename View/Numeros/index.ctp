@@ -26,6 +26,11 @@ $this->Html->script('numeros_index.js', ['inline' => false]);
                     <?= $numero['Magazine']['nom'] ?>
                 </p>
             </div>
+            <?php if ($numero['Numero']['lu']): ?>
+            <div class="progress" style="height: 5px; margin: -5px 0 0 0;">
+                <div class="progress-bar progress-bar-danger" style="width: <?=$numero['Numero']['lu'] ?>%;"></div>
+            </div>
+            <?php endif; ?>
         </a>
     </div>
 <?php endforeach; ?>
