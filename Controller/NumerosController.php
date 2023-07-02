@@ -104,4 +104,12 @@ class NumerosController extends AppController {
         }
         $this->autoRender = false;
     }
+
+    public function fav_toggle($id = null) {
+        $this->Numero->id = $id;
+        if (!$this->Numero->exists()) throw new NotFoundException();
+
+        $this->Numero->saveField('favorie', !$this->Numero->field('favorie'));
+        $this->redirect($this->referer());
+    }
 }
