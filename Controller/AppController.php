@@ -26,7 +26,7 @@ class AppController extends Controller {
     public $components = array(
         'Paginator',
         'RequestHandler',
-//        'DebugKit.Toolbar',
+        'DebugKit.Toolbar',
     );
 
     public $layout = 'Bs3.starter';

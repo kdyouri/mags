@@ -5,7 +5,8 @@
      "cakephp/debug_kit": "~2.2",
      "ext-gd": "*",
      "ext-json": "*",
-     "ext-dom": "*"
+     "ext-dom": "*",
+    "ext-curl": "*"
   },
   "config": {
      "vendor-dir": "Vendor/"

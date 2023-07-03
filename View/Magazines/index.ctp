@@ -3,7 +3,23 @@
  * @var View $this
  * @var array $parGenre
  */
+
+$this->Html->css('magazines_index.css', ['inline' => false]);
+$this->Html->css('/vendor/imageflow/css/imageflow.min.css', ['inline' => false]);
+$this->Html->script('/vendor/imageflow/js/imageflow.min.js', ['inline' => false]);
 ?>
+
+<?php if (!empty($favories)): ?>
+<div id="myImageFlow" class="imageflow" style="height: 200px;">
+    <?php foreach ($favories as $numero):
+        $image = "https://www.abandonware-magazines.org/images_grandescouvertures/{$numero['Numero']['url_vignette']}";
+        $link = Router::url(['controller' => 'numeros', 'action' => 'view', $numero['Numero']['id']]);
+        $desc = sprintf('%s : %s, %s', $numero['Magazine']['nom'], ($numero['Numero']['hs'] ? 'HS' : 'N°' . $numero['Numero']['numero']), $numero['Numero']['date']);
+        ?>
+    <img src="<?= $image ?>" width="250" height="328" alt="<?= $desc ?>" longdesc="<?= $link ?>" />
+    <?php endforeach; ?>
+</div>
+<?php endif; ?>
 
 <?php foreach ($parGenre as $genre => $magazines): ?>
 <div class="panel panel-default">

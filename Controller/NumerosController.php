@@ -6,7 +6,7 @@
 class NumerosController extends AppController {
 
     public function index($magazineId = null) {
-        $this->disableCache();
+        $this->response->disableCache();
 
         $query = [
             'conditions' => [
