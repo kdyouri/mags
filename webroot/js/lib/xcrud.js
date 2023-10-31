@@ -176,7 +176,7 @@ var Xcrud = {
                     $dialog.html(resp);
                     $dialog.find('input[type=text],input[type=number],input[type=email],textarea,select').not('[disabled]').not('[readonly]').first().focus();
                     $dialog.trigger('content.loaded');
-                }).error(function(jqxhr){
+                }).fail(function(jqxhr){
                     $dialog.find('.modal-dialog').removeClass('modal-sm');
                     $dialog.find('.modal-title').text('Erreur');
                     $dialog.find('.modal-body').html(jqxhr.responseText);

@@ -17,6 +17,19 @@ if ($num > 1 && $numero['Numero']['pivoter']) {
     imagedestroy($im);
     $im = $rotate;
 }
+if ($numero['Numero']['marge']) {
+    $src = $im;
+    $w = imagesx($src);
+    $h = imagesy($src);
+    $im = imagecreatetruecolor($w, $h);
+
+    $marge = intval($w * $numero['Numero']['marge'] / 100);
+    $src_x = ($num % 2) ? $marge : 0;
+    $src_w = $w - $marge;
+    imagecopyresampled($im, $src, 0, 0, $src_x, 0, $w, $h, $src_w, $h);
+
+    imagedestroy($src);
+}
 
 switch (true) {
     case $numero['Numero']['livret']:
