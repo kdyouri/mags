@@ -26,6 +26,7 @@
     <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
     <![endif]-->
+    <script>BASE_URL = '<?= Router::url('/') ?>'</script>
 </head>
 <body style="padding:70px 0">
     <?= $this->element('navbar') ?>

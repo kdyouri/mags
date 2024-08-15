@@ -49,7 +49,7 @@ $this->Html->script([
         img.load(function(){
             if (page < pageCount) loadPageImage(++page);
         });
-        img.attr('src', '/numeros/page/' + id + '/' + page);
+        img.attr('src', '<?= Router::url('/numeros/page') ?>/' + id + '/' + page);
 
         if (page === pageCount) {
             $('#progressbar').parent().hide();
@@ -97,7 +97,7 @@ $this->Html->script([
 
                     if (page > lastReachedPage) {
                         lastReachedPage = page;
-                        $.get(`/numeros/update_read_data/${id}/${lastReachedPage}`);
+                        $.get(`<?= Router::url('/numeros/update_read_data') ?>/${id}/${lastReachedPage}`);
                     }
                 },
                 turned: function(event, page, view) {
@@ -333,9 +333,9 @@ $this->Html->script([
     // Load the HTML4 version if there's not CSS transform
     yepnope({
         test : Modernizr.csstransforms,
-        yep: ['/js/lib/turn.min.js'],
-        nope: ['/js/lib/turn.html4.min.js', '/css/jquery.ui.html4.css'],
-        both: ['/js/lib/zoom.min.js', '/css/jquery.ui.css', '/js/magazine.js', '/css/magazine.css'],
+        yep: ['<?= Router::url('/js/lib/turn.min.js') ?>'],
+        nope: ['<?= Router::url('/js/lib/turn.html4.min.js') ?>', '<?= Router::url('/css/jquery.ui.html4.css') ?>'],
+        both: ['<?= Router::url('/js/lib/zoom.min.js') ?>', '<?= Router::url('/css/jquery.ui.css') ?>', '<?= Router::url('/js/magazine.js') ?>', '<?= Router::url('/css/magazine.css') ?>'],
         complete: loadApp
     });
 </script>

@@ -48,7 +48,7 @@ function loadPage(page, pageElement) {
 
 	// Load the page
 
-	img.attr('src', '/numeros/page/' + id + '/' + page);
+	img.attr('src', BASE_URL + 'numeros/page/' + id + '/' + page);
 }
 
 // Zoom in / Zoom out
@@ -82,7 +82,7 @@ function loadLargePage(page, pageElement) {
 
 	// Loadnew page
 	
-	img.attr('src', '/numeros/page/' + id + '/' + page);
+	img.attr('src', BASE_URL + 'numeros/page/' + id + '/' + page);
 }
 
 // Load small page
@@ -96,7 +96,7 @@ function loadSmallPage(page, pageElement) {
 	img.unbind('load');
 	// Loadnew page
 
-	img.attr('src', '/numeros/page/' + id + '/' + page);
+	img.attr('src', BASE_URL + 'numeros/page/' + id + '/' + page);
 }
 
 // http://code.google.com/p/chromium/issues/detail?id=128488
